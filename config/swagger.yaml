@@ -1,0 +1,41 @@
+---
+swagger: '2.0'
+info:
+  title: Image Repository
+  description: 'Repository for storing and searching for images'
+  version: '1.0'
+produces:
+- application/json
+host: localhost:3000
+basePath: "/api"
+paths:
+  /getImages:
+    get:
+      summary: Returns all images.
+      responses:
+        '200':
+          description: All images
+    post:
+      summary: Upload an image.
+      parameters:
+        - name: url
+          in: query
+          required: true
+          description: Image Url
+          type: string
+      responses:
+        '200':
+          description: Uploaded image
+  /getImages/{tags}:
+    get:
+      summary: Search for image.
+      parameters:
+        - name: tags
+          in: path
+          required: true
+          description: Terms to search for (seperate by space)
+          type: string
+      responses:
+        '200':
+          description: All images with tag
+    
