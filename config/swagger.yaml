@@ -1,11 +1,16 @@
 ---
 swagger: '2.0'
+consumes:
+  - application/json
+  - application/xml
+produces:
+  - application/json
+  - application/xml
 info:
   title: Image Repository
   description: 'Repository for storing and searching for images'
   version: '1.0'
-produces:
-- application/json
+
 host: localhost:3000
 basePath: "/api"
 paths:
@@ -36,12 +41,12 @@ paths:
           description: Uploaded image
   /getImages/{tags}:
     get:
-      summary: Search for image by description/term.
+      summary: Search for images by description/term.
       parameters:
         - name: tags
           in: path
           required: true
-          description: Terms to search for (seperate by space)
+          description: Term to search for (only one)
           type: string
       responses:
         '200':

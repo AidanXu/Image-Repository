@@ -30,8 +30,8 @@ async function thesaurus(word) {
     var req = unirest("GET", "https://wordsapiv1.p.rapidapi.com/words/" + word + "/synonyms");
 
     req.headers({
-        "x-rapidapi-key": "283afb75c2msh836c065ed1f9005p1b9648jsn4bc615b877ea",
-        "x-rapidapi-host": "wordsapiv1.p.rapidapi.com",
+        "x-rapidapi-key": config.get('Thesaurus.apiKey'),
+        "x-rapidapi-host": config.get('Thesaurus.url'),
         "useQueryString": true
     });
 

@@ -1,13 +1,11 @@
 const external = require('./src/external');
 const mongoConfig = require('./config/mongoConfig');
-const objectID = require('mongodb').objectID;
 const Joi = require('joi');
 const express = require('express');
 const YAML = require('yamljs');
 const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = YAML.load('./config/swagger.yaml');
 const mongoose = require('mongoose');
-const { stringify } = require('yamljs');
 const { ObjectID } = require('mongodb');
 
 mongoose.connect('mongodb://localhost/ImageRepo')
