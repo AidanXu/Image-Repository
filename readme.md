@@ -1,6 +1,10 @@
 # Project
 
-This project was generated with [ExpressJs](https://github.com/expressjs/express).
+This project was built with [ExpressJs](https://github.com/expressjs/express).
+
+## Dependancies
+
+Requires [Node.js](https://nodejs.org/en/) and [MongoDB](https://www.mongodb.com/). 
 
 ## Development server
 

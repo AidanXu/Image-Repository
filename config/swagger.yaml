@@ -18,17 +18,25 @@ paths:
     post:
       summary: Upload an image.
       parameters:
-        - name: url
-          in: query
-          required: true
-          description: Image Url
-          type: string
+        - in: body
+          name: Image
+          description: The image to upload (replace string with name and url).
+          schema:
+            type: object
+            required:
+              - name
+              - url
+            properties:
+              name:
+                type: string
+              url:
+                type: string
       responses:
         '200':
           description: Uploaded image
   /getImages/{tags}:
     get:
-      summary: Search for image.
+      summary: Search for image by description/term.
       parameters:
         - name: tags
           in: path
@@ -38,4 +46,39 @@ paths:
       responses:
         '200':
           description: All images with tag
-    
+  /getImages/searchByImage/{url}:
+    get:
+      summary: Search for similar images.
+      parameters:
+        - name: url
+          in: path
+          required: true
+          description: Image to search for.
+          type: string
+      responses:
+          '200':
+            description: Similar images
+  /getImages/getById/{id}:
+    get:
+      summary: Get image by exact id.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of stored image
+          type: string
+      responses:
+          '200':
+            description: Return image success.
+    delete:
+      summary: Delete image by exact id.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of stored image
+          type: string
+      responses:
+          '200':
+            description: Delete image success.
+  
