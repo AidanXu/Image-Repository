@@ -1,0 +1,10 @@
+{
+    "Watson" : {
+        "apiKey": "Basic YXBpa2V5OkpfRjRsOEFhaWVLOXlmUmxhQzJiZUs4TmFWODJuVjhpZVppcmljdE1RaUZu",
+        "url" : "https://gateway.watsonplatform.net/visual-recognition/api/v3/classify"
+    },
+    "Thesaurus" : {
+        "url": "wordsapiv1.p.rapidapi.com",
+        "apiKey": "283afb75c2msh836c065ed1f9005p1b9648jsn4bc615b877ea"
+    }
+}
